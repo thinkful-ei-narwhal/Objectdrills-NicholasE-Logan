@@ -1,15 +1,28 @@
-"use strict";
+'use strict';
 
+//object creator
 function createMyObject() {
   return {
-    foo: "bar",
+    foo: 'bar',
     answerToUniverse: 42,
-    "olly olly": "oxen free",
-    sayHello: function() {
-      return "hello";
+    'olly olly': 'oxen free',
+    sayHello: function () {
+      return 'hello';
     }
   };
 }
+
+//object updater
+const testObj = {
+  test: 'stuff'
+};
+
+function updateObject(obj) {
+
+  return Object.assign(obj, { foo: 'foo', bar: 'bar', bizz: 'bizz', bang: 'bang' });
+}
+
+console.log(updateObject(testObj));
 
 /* From here down, you are not expected to 
      understand.... for now :)  
@@ -21,40 +34,40 @@ function createMyObject() {
 
 (function testCreateMyObject() {
   var obj = createMyObject();
-  if (typeof obj !== "object") {
-    console.error("ERROR: `createMyObject` must return an object");
+  if (typeof obj !== 'object') {
+    console.error('ERROR: `createMyObject` must return an object');
     return false;
   }
-  var expectedKeys = ["foo", "answerToUniverse", "olly olly", "sayHello"];
-  expectedKeys.forEach(function(key) {
+  var expectedKeys = ['foo', 'answerToUniverse', 'olly olly', 'sayHello'];
+  expectedKeys.forEach(function (key) {
     if (!(key in obj)) {
-      console.error("ERROR: Missing a key for " + key);
+      console.error('ERROR: Missing a key for ' + key);
       return false;
     }
   });
-  if (obj.foo !== "bar") {
-    console.error("ERROR: Value for `foo` should be 'bar' but was " + obj.foo);
+  if (obj.foo !== 'bar') {
+    console.error('ERROR: Value for `foo` should be \'bar\' but was ' + obj.foo);
     return false;
   }
   if (obj.answerToUniverse !== 42) {
     console.error(
-      "ERROR: Value for `answerToUniverse` should be 42 but was " +
-        obj.answerToUniverse
+      'ERROR: Value for `answerToUniverse` should be 42 but was ' +
+      obj.answerToUniverse
     );
     return false;
   }
-  if (obj["olly olly"] !== "oxen free") {
+  if (obj['olly olly'] !== 'oxen free') {
     console.error(
-      "ERROR: Value for `'olly olly'` should be 'oxen free' but was " +
-        obj["olly olly"]
+      'ERROR: Value for `\'olly olly\'` should be \'oxen free\' but was ' +
+      obj['olly olly']
     );
     return false;
   }
-  if (!(typeof obj.sayHello === "function" && obj.sayHello() === "hello")) {
+  if (!(typeof obj.sayHello === 'function' && obj.sayHello() === 'hello')) {
     console.error(
-      "ERROR: Value for `sayHello` must be a function that returns the string 'hello'"
+      'ERROR: Value for `sayHello` must be a function that returns the string \'hello\''
     );
     return false;
   }
-  console.log("SUCCESS: Your function works!");
+  console.log('SUCCESS: Your function works!');
 })();
