@@ -1,10 +1,10 @@
 // 1 object initializers and methods
-"use strict";
+'use strict';
 
 const loaf = {
   flour: 300,
   water: 210,
-  hydration: function() {
+  hydration: function () {
     return (this.water / this.flour) * 100;
   }
 };
@@ -13,11 +13,11 @@ console.log(`flour: ${loaf.flour} | hydration: ${loaf.water}`);
 console.log(loaf.hydration());
 
 const myObj = {
-  foo: "fighters",
-  bar: "scuba",
-  fum: "fumes",
-  quux: "quiz",
-  spam: "musabi"
+  foo: 'fighters',
+  bar: 'scuba',
+  fum: 'fumes',
+  quux: 'quiz',
+  spam: 'musabi'
 };
 
 function myKeys(myObj) {
@@ -29,3 +29,10 @@ function myKeys(myObj) {
 }
 
 myKeys(myObj);
+
+// arrays in objects
+let obj = {
+  meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper']
+};
+
+console.log(obj.meals[3]);
